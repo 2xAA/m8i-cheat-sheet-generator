@@ -19,5 +19,5 @@ export default [
   { data: (data) => data['Transpose'].label, x: 9, y: 7, color: foregroundColor },
 
   { data: 'TABLE TIC', x: 16, y: 7, color: foregroundColor2 },
-  { data: (data) => toHex(data['Table Tick'].value), x: 26, y: 7, color: foregroundColor }.color
+  { data: (data) => toHex(data['Table Tick'].value), x: 26, y: 7, color: foregroundColor }
 ]
