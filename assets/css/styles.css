@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "stealth57";
+  src: url("../fonts/stealth57-webfont.woff2") format("woff2"),
+       url("../fonts/stealth57-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  --color-foreground-2: #b5b5b5;
+  --color-highlight: #01faff;
+  --color-highlight-2: #ff00b0;
+}
+
+html {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+html, body, #app {
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+#app {
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
