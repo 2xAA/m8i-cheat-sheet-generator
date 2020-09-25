@@ -2,7 +2,7 @@ const logo = new Path2D('M 232.4 111.7 L 232.4 160.7 L 87.4 160.7 L 87.4 128.7 L
 
 const m = document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGMatrix()
 const p = new Path2D()
-const t = m.scale(4.022)
+const t = m.scale(5.01)
 p.addPath(logo, t)
 
 export default p
