@@ -9,7 +9,13 @@ const layout = [
     x: 3,
     y: 5,
     color: foregroundColor2
-  }
+  },
+
+  // map
+  { data: '    E', x: 34, y: 17, color: foregroundColor2 },
+  { data: 'SCPI', x: 34, y: 18, color: foregroundColor2 },
+  { data: 'T', x: 38, y: 18, color: highlightColor },
+  { data: '   M ', x: 35, y: 19, color: foregroundColor2 }
 ]
 
 for (let i = 0; i < 16; i += 1) {

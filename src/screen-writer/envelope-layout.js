@@ -2,6 +2,11 @@ import toHex from '../util/to-hex'
 import { foregroundColor, foregroundColor2, highlightColor } from './colors'
 
 const layout = [
+  // map
+  { data: '   E ', x: 34, y: 17, color: highlightColor },
+  { data: 'SCPIT', x: 34, y: 18, color: foregroundColor2 },
+  { data: '   M ', x: 34, y: 19, color: foregroundColor2 },
+
   {
     data: 'LFO',
     x: 19,

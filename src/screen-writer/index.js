@@ -9,7 +9,7 @@ import envelopeLayout from './envelope-layout'
 import glyphs from './glyphs'
 import m8Logo from './m8-logo'
 import {
-  backgroundColor, highlightColor
+  backgroundColor, highlightColor, foregroundColor2
 } from './colors'
 
 const layouts = {
@@ -37,7 +37,7 @@ function clear () {
 
 function write (data = [], x = 0, y = 0, color = '#000', type = 'string') {
   if (data.length && type !== 'glyph') {
-    const dataLength = Math.min(data.length, rows)
+    const dataLength = Math.min(data.length, columns)
 
     for (let i = 0; i < dataLength; i += 1) {
       chars[x + i][y] = { data: data[i], color, type }
@@ -161,6 +161,14 @@ export default function screenWriter (canvas, data) {
   screenX = 0
   screenY = 1
   writeLayout(commonInstrumentLayout, data)
+  // map
+  writeLayout([
+    { data: '   E ', x: 34, y: 17, color: foregroundColor2 },
+    { data: 'SCP T', x: 34, y: 18, color: foregroundColor2 },
+    { data: 'I', x: 37, y: 18, color: highlightColor },
+    { data: '   M ', x: 34, y: 19, color: foregroundColor2 },
+    data
+  ])
 
   const layout = layouts[data['Instrument Type'].label]
 
@@ -182,9 +190,14 @@ export default function screenWriter (canvas, data) {
   clear()
   screenX = 0
   screenY = 0
-  writeLayout(commonScreenLayout, data)
-  writeLayout(commonInstrumentLayout, data)
-  writeLayout(envelopeLayout, data)
+  if (layout) {
+    writeLayout(commonScreenLayout, data)
+    writeLayout(commonInstrumentLayout, data)
+    writeLayout(envelopeLayout, data)
+  } else {
+    write('DRAG AND DROP AN .M8I FILE', 1, 3, highlightColor)
+    write('RIGHT CLICK TO SAVE IMAGE', 1, 5, highlightColor)
+  }
   renderScreen()
 }
 

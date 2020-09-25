@@ -8,6 +8,8 @@ import {
 export default [
   { data: 'INST. 00', x: 1, y: 3, color: highlightColor },
 
+  { data: 'LOAD SAVE', x: 19, y: 3, color: foregroundColor },
+
   { data: 'TYPE', x: 1, y: 5, color: foregroundColor2 },
   { data: (data) => data['Instrument Type'].label, x: 9, y: 5, color: foregroundColor },
 
